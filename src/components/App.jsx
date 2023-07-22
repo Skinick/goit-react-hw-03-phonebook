@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import css from './App.module.css';
 import { nanoid } from 'nanoid';
+
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
@@ -24,6 +25,7 @@ class App extends Component {
       this.setState({ contacts: parsedContacts });
     }
   }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
@@ -100,4 +102,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
